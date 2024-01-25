@@ -16,10 +16,8 @@ public class Homework {
 
     public static void main(String[] args) {
         //Task 1
-        Homework homework = new Homework();
-
         List<String> names = Arrays.asList("John", "Ann", "Kate", "Tomas", "Tomas", "John");
-        homework.printList(names);
+        printList(names);
 
         //Task 2
         Person person1 = new Person("John", 35, new Address("Street", 5));
@@ -27,16 +25,16 @@ public class Homework {
         Person person3 = new Person("Bill", 23, new Address("Street", 2));
 
         List <Person> persons = Arrays.asList(person1, person2, person3);
-        homework.printAddressOf_PersonsOver17(persons);
+        printAddressOf_PersonsOver17(persons);
 
     }
-    public void printList (List <String> names){
+    public static void printList (List <String> names){
         names.stream()
                 .distinct()
                 .forEach(System.out::println);
     }
 
-    public void printAddressOf_PersonsOver17 (List <Person> persons){
+    public static void printAddressOf_PersonsOver17 (List <Person> persons){
         persons.stream()
                 .filter(person -> person.getAge() > 17)
                 .forEach(person -> System.out.println(person.getAddress().toString()));
